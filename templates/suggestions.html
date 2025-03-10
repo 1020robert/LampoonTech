@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<h2>Message Board</h2>
+<form action="/suggestions" method="POST">
+    <label for="suggestion">Submit Your Message:</label>
+    <textarea id="suggestion" name="suggestion" rows="4" required></textarea>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<hr>
+{% if suggestions %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-start">User</th>
+            <th class="text-start">Message</th>
+            <th class="text-start">Submitted At</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for suggestion in suggestions %}
+            <tr>
+                <td class="text-start">{{ suggestion.username }}</td>
+                <td class="text-start">{{ suggestion.suggestion }}</td>
+                <td class="text-start">{{ suggestion.created_at }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    <p>No Messages have been submitted yet.</p>
+{% endif %}
+{% endblock %}
