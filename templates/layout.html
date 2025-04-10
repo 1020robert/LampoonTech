@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}OlderWomenDating{% endblock %}</title>
+    <link href="/static/landingPage.css" type="text/css" rel="stylesheet">
+    <link href="/static/favicon.ico" rel="icon">
+    <script src="/static/cookie.js"></script>
+    <style>
+        .banner {
+            background-image: url(/static/indexbaner.webp);
+        }
+        @media screen and (max-width: 768px) {
+            .banner {
+                background-image: url(/static/indexbanerMobile.webp);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="home publicPageContent landingPage">
+    <div class="homeTop">
+        <header>
+            <div class="pageWidth">
+                <a class="setLang logo" aria-label="logo" href="/register"></a>
+                <div class="nav">
+                    <div class="pc pcShow">
+                        <a href="/blog" class="ourBlog">our BLOG</a><i></i>
+                        <a href="/login" class="setLang signIn goSignIn">sign in</a>
+                        <a href="/register" class="setLang signUp button">sign up</a>
+                    </div>
+                </div>
+                <div class="mobileNav mobileShow">
+                    <div class="mobile" id="mobile" style="display:none">
+                        <div class="list">
+                            <a href="/blog">our BLOG</a>
+                            <a href="/login" class="setLang">sign in</a>
+                            <a href="/register" class="setLang">sign up</a>
+                        </div>
+                    </div>
+                    <div class="mobileSwitch" id="mobileSwitch"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+        </header>
+        <div class="mask mobileShow" id="mask" style="display:none"></div>
+        <div class="banner">
+            <div class="pageWidth">
+                <h1>#1 OLDER WOMEN DATING SITE IN UNITED STATES</h1>
+                <p>Experience the depth of connections beyond age barriers</p>
+                <a href="/register" class="setLang signIn">JOIN FOR FREE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="homeContent">
+        <div class="pageWidth">
+            {% block main %}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
