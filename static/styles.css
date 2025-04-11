@@ -224,6 +224,6 @@ footer {
     background: rgba(255, 105, 180, 0.95);
   }
 body.light-pink-page {
-    background: linear-gradient(to bottom right, #fff0f5, #ffe4ec);
+    background-color: #ffe6f0; /* soft blush pink */
 }
 
