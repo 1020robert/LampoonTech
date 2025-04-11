@@ -9,16 +9,28 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/login" method="post">
+<div class="login-wrapper">
+
+    <h1 class="login-title">Welcome Back 💕</h1>
+
+    <form action="/login" method="post" class="login-form">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
         </div>
         <div class="mb-3">
-            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+            <input class="form-control" name="password" placeholder="Password" type="password">
         </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
+        <button class="btn pulse-button w-100" type="submit">Log In</button>
     </form>
+
+    <div class="register-redirect mt-4 text-center">
+        <p class="small-text">Haven’t made an account yet?</p>
+        <a class="btn btn-outline-pink" href="/register">Register Now!</a>
+    </div>
+
+</div>
 {% endblock %}
+
 {% block footer %}
-    {# Empty block to remove footer #}
+    {# Intentionally left blank #}
 {% endblock %}
