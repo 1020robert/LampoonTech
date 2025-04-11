@@ -692,4 +692,69 @@ footer {
     font-family: 'Fredoka', sans-serif;
     background: transparent;
 }
+.results-header {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ff69b4;
+  text-align: center;
+  margin: 50px 0 30px;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+.flight-table-wrapper {
+  overflow-x: auto;
+  background: rgba(255, 240, 245, 0.9);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(255, 182, 193, 0.3);
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.flirty-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: #333;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flirty-table thead {
+  background: linear-gradient(to right, #ffb6c1, #ffe6f0);
+  color: #7a2f51;
+  font-weight: 700;
+  text-align: center;
+}
+
+.flirty-table th, .flirty-table td {
+  padding: 12px 15px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #f4dce5;
+}
+
+.save-btn {
+  background: linear-gradient(to right, #ff69b4, #ff85c1);
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 20px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+}
+
+.no-results-msg {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #d63384;
+  margin-top: 40px;
+}
 
