@@ -682,4 +682,14 @@ footer {
     font-size: 0.95rem;
     border-radius: 30px;
 }
+.footer-quote {
+    margin-top: 10px;
+    padding: 10px;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #a82d68;
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+    background: transparent;
+}
 
