@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1>Saved Flights</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Origin</th>
+                <th class="text-end">Destination</th>
+                <th class="text-end">Departure Date</th>
+                <th class="text-end">Airline</th>
+                <th class="text-end">Price (USD)</th>
+                <th class="text-end">Saved At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flight in saved_flights %}
+                <tr>
+                    <td class="text-start">{{ flight.origin }}</td>
+                    <td class="text-end">{{ flight.destination }}</td>
+                    <td class="text-end">{{ flight.departure_date }}</td>
+                    <td class="text-end">{{ flight.airline }}</td>
+                    <td class="text-end">{{ flight.price | usd }}</td>
+                    <td class="text-end">{{ flight.saved_at }}</td>
+                    <td class="text-end">
+                        <form action="/delete_flight/{{ flight.id }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this flight?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
