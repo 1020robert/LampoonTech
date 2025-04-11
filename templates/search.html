@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}Search{% endblock %}
+{% block main %}
+<div class="landingPageDetail">
+    <h2>Search for Your Match</h2>
+    <form action="/results" method="post">
+        <input name="query" type="text" placeholder="Type a destination...">
+        <button type="submit">Search</button>
+    </form>
+</div>
+{% endblock %}

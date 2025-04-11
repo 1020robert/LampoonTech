@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Message Board{% endblock %}
+{% block main %}
+<div class="landingPageDetail">
+    <h2>Community Suggestions</h2>
+    <form action="/suggestions" method="post">
+        <textarea name="message" placeholder="Leave a suggestion..." required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <ul>
+        {% for suggestion in suggestions %}
+        <li>{{ suggestion }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

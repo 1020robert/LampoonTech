@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>google_ic</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MKB_01" transform="translate(-305.000000, -1001.000000)" fill="#FF106C" fill-rule="nonzero">
+            <g id="Group-10" transform="translate(288.000000, 985.000000)">
+                <g id="google-play" transform="translate(17.000000, 16.000000)">
+                    <polygon id="Path" points="10.925316 9.89875 9.10146021 8.1375 2.40614047 14.621875"></polygon>
+                    <polygon id="Path" points="10.925316 5.104375 2.40614047 0.38125 9.10146021 6.865625"></polygon>
+                    <path d="M13.5949164,8.391875 C14.1409277,7.973125 14.1409277,7.029375 13.5586429,6.610625 L11.771697,5.611875 L9.77792869,7.501875 L11.771697,9.391875 L13.5949164,8.391875 Z" id="Path"></path>
+                    <path d="M0.658013554,15 L8.44344665,7.49875 L0.658013554,0.000625 L0.658013554,0 C0.264096349,0.199375 0,0.5625 0,1.034375 L0,13.965625 C0,14.4375 0.264096349,14.800625 0.658013554,15 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

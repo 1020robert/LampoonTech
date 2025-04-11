@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}MaMa Knows Best{% endblock %}</title>
+
+    <!-- Fonts -->
+    <link rel="preload" href="{{ url_for('static', filename='fonts/Montserrat-Regular.ttf') }}" as="font" crossorigin="anonymous">
+    <link rel="preload" href="{{ url_for('static', filename='fonts/Montserrat-ExtraBold.ttf') }}" as="font" crossorigin="anonymous">
+    <link rel="preload" href="{{ url_for('static', filename='fonts/Montserrat-MediumItalic.ttf') }}" as="font" crossorigin="anonymous">
+    <link rel="preload" href="{{ url_for('static', filename='fonts/Montserrat-Medium.ttf') }}" as="font" crossorigin="anonymous">
+    <link rel="preload" href="{{ url_for('static', filename='fonts/Montserrat-Bold.ttf') }}" as="font" crossorigin="anonymous">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/fav.png') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/fav.png') }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Optional JS -->
+    <script src="{{ url_for('static', filename='js/tiny-slider.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/prism.js') }}"></script>
+</head>
+
+<body>
+    {% block main %}{% endblock %}
+</body>
+</html>

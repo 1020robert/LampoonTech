@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}Login - MaMa Knows Best{% endblock %}
+
+{% block main %}
+<div class="landingPageDetail">
+    <h1 class="title">Log In to Your Account</h1>
+    <form action="/login" method="post" class="auth-form">
+        <div class="form-group">
+            <input name="username" type="text" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <input name="password" type="password" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="setLang signUpNow">Log In</button>
+        </div>
+    </form>
+</div>
+
+<style>
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.auth-form .form-group {
+    margin-bottom: 15px;
+}
+.auth-form input {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ec4899;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.auth-form button:hover {
+    background-color: #db2777;
+}
+</style>
+{% endblock %}

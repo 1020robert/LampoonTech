@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Saved Flights{% endblock %}
+{% block main %}
+<div class="landingPageDetail">
+    <h2>Your Saved Flights</h2>
+    <ul>
+        {% for flight in flights %}
+        <li>{{ flight }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
