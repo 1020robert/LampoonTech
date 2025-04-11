@@ -624,3 +624,53 @@ footer {
     color: white;
     box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
 }
+
+.auth-wrapper {
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    padding: 40px 30px;
+    margin: 60px auto;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    text-align: center;
+}
+
+.auth-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff69b4;
+    margin-bottom: 30px;
+}
+
+.form-control-pink {
+    border-radius: 10px;
+    border: 2px solid #ffaad4;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #fff0f5;
+    color: #444;
+    box-shadow: 0 2px 6px rgba(255, 105, 180, 0.1);
+}
+
+.form-control-pink:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.25);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.pulse-button.small {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    border-radius: 30px;
+}
+
