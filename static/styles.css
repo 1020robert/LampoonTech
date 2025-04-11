@@ -217,3 +217,11 @@ footer {
         transform: translateY(0);
     }
 }
+/* On mobile/touch: always show description instead of hover */
+@media (hover: none) and (pointer: coarse) {
+  .image-grid p {
+    transform: translateY(0%) !important;
+    background: rgba(255, 105, 180, 0.95);
+  }
+}
+
