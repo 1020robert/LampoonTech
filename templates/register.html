@@ -9,19 +9,31 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/register" method="post">
+<div class="auth-wrapper">
+
+    <h2 class="auth-title">Create an Account 💖</h2>
+
+    <form action="/register" method="post" class="auth-form">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+            <input autocomplete="off" autofocus class="form-control form-control-pink" name="username" placeholder="Choose a Username" type="text">
         </div>
         <div class="mb-3">
-            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+            <input class="form-control form-control-pink" name="password" placeholder="Create Password" type="password">
         </div>
         <div class="mb-3">
-            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Password (again)" type="password">
+            <input class="form-control form-control-pink" name="confirmation" placeholder="Confirm Password" type="password">
         </div>
-        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="pulse-button w-100" type="submit">Register 💅</button>
     </form>
+
+    <div class="register-link mt-4">
+        <p>Already have an account?</p>
+        <a href="/login" class="pulse-button small">Log In</a>
+    </div>
+
+</div>
 {% endblock %}
+
 {% block footer %}
-    {# Empty block to remove footer #}
+    {# Intentionally empty to hide footer #}
 {% endblock %}
