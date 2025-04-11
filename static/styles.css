@@ -198,4 +198,51 @@ footer {
     background-color: #f8f9fa;
     color: #333;
 }
+.image-grid button {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-grid button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+.image-grid button:hover::after {
+    opacity: 1;
+}
+.image-grid button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+.image-grid p {
+    margin: 0;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222;
+    border-radius: 0 0 12px 12px;
+}
+.image-grid button {
+    animation: fadeIn 0.4s ease both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
