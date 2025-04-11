@@ -9,11 +9,8 @@
   <link rel="shortcut icon" href="{{ url_for('static', filename='Content/Images/fav.png') }}" type="image/x-icon" />
   <link rel="apple-touch-icon" href="{{ url_for('static', filename='Content/Images/fav.png') }}" />
 
-  <!-- Main CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='Content/css?v=ODZDyxoWpx4otkVdk414n1B2CGVx6cg2VzcnuhHEMbg1.css') }}" />
-
-  <!-- Fonts (if separate, include Montserrat from Google or local) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" />
 
   <!-- JS -->
   <script src="{{ url_for('static', filename='Scripts/prism.js') }}"></script>
@@ -21,20 +18,35 @@
 </head>
 <body>
 
-  <!-- BEGIN: Full original HTML content -->
-  <header>
-    <!-- Your original nav bar here -->
-  </header>
+{% block main %}
+<!-- Entire original homepage content goes here -->
+<!-- If you're converting more pages, replace this block on each template -->
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <a href="/">MaMa Knows Best</a>
+    </div>
+    <nav>
+      <a href="/register">Register</a>
+      <a href="/login">Login</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    {% block main %}
-    <!-- Homepage content from index.html will show up here -->
-    {% endblock %}
-  </main>
+<section class="hero">
+  <div class="container">
+    <h1>Find Love Where It Wasn't Expected</h1>
+    <p>Connecting mature wisdom with youthful energy, one swipe at a time.</p>
+    <a href="/register" class="setLang signUpNow">Join Now</a>
+  </div>
+</section>
 
-  <footer>
-    <!-- Your original footer from the design -->
-  </footer>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 MaMa Knows Best. All rights reserved.</p>
+  </div>
+</footer>
+{% endblock %}
 
 </body>
 </html>
