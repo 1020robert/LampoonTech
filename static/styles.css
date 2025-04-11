@@ -47,22 +47,52 @@ body.default-page {
 
 /* Hero Sections */
 .top, .features {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block;
+    background-color: rgba(255, 182, 193, 0.85);
+    color: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.2);
+    text-align: center;
 }
-.top h1 { font-size: 100px; padding: 10px; }
-.top p { font-size: 35px; }
+.top h1 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.top p {
+    font-size: 1.2rem;
+    color: #fff;
+}
 
 .features {
-    margin: 100px;
-    font-size: 20px;
+    background-color: #ffe6f0;
+    color: #333;
     text-align: left;
 }
-.features ul { padding-left: 20px; }
-.features h2 { text-align: left; font-size: 50px; }
+.features ul {
+    list-style: none;
+    padding-left: 0;
+}
+.features li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 25px;
+}
+.features li::before {
+    content: '💘';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff69b4;
+}
 
 /* Footer */
 footer {
