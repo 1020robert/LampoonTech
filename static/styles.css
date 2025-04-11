@@ -1,165 +1,70 @@
-html, body {
-    height: 100%;
+/* Base font and layout */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
     margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column; /
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Main content area expands to push the footer down */
 main {
     flex: 1;
 }
-/* Size for brand */
-nav .navbar-brand
-{
-    font-size: xx-large;
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-size: 1.5rem;
 }
 
-/* Colors for brand */
-nav .navbar-brand .blue
-{
-    color: #537fbe;
-}
-nav .navbar-brand .red
-{
-    color: #ea433b;
-}
-nav .navbar-brand .yellow
-{
-    color: #f5b82e;
-}
-nav .navbar-brand .green
-{
-    color: #2e944b;
-}
-
+/* Page backgrounds */
 body.login-page {
-    background-image: url(/static/Harvard.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background: url(/static/Harvard.jpg) center center / cover no-repeat fixed;
 }
-
 body.index-page {
-    background-image: url(/static/test.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center 20%;
-    background-attachment: fixed;
+    background: url(/static/test.jpg) center 20% / cover no-repeat fixed;
 }
-
 body.about-page {
-    background-image: url(/static/jupiter.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-body.default-page {
-    background-color: #f8f9fa;
+    background: url(/static/jupiter.jpeg) center center / cover no-repeat fixed;
 }
 
+/* Section styles */
 .top, .features {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block;
-}
-.top h1{
-    font-size: 100px;
-    padding: 10px;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
 }
 
-.top p{
-    font-size: 35px;
+.top h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
+
+.top p {
+    font-size: 1.5rem;
+}
+
 .features {
-     margin: 100px;
-    font-size: 20px;
-    text-align:left;
+    font-size: 1.1rem;
+    text-align: left;
 }
 
 .features ul {
-    padding-left: 20px;
+    padding-left: 1.5rem;
 }
 
 .features h2 {
-    text-align: left;
-    font-size: 50px;
+    margin-bottom: 1rem;
+}
+
+/* Utility classes */
+.text-primary {
+    color: #007bff !important;
 }
 
 footer {
-    background-color: #343a40;
-    color: #ffffff;
-    padding: 20px 10px;
-    font-size: 16px;
+    font-size: 0.875rem;
 }
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-links, .footer-social, .footer-copyright {
-    margin: 10px 0;
-}
-
-.footer-links a, .footer-social a {
-    color: #ffffff;
-    text-decoration: underline;
-    margin: 0 10px;
-}
-
-.footer-links a:hover, .footer-social a:hover {
-    text-decoration: underline;
-}
-
-.footer-social img {
-    width: 24px;
-    margin: 0 5px;
-}
-
-.text {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
-.text h1 {
-    font-size: 40px;
-    text-decoration: underline;
-}
-
-.text p span {
-    font-size: 28px;
-    display: inline;
-    padding: 2px;
-}
-
-
-.image-grid {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.image-grid img {
-    width: 200px;  /* Set a fixed width */
-    height: 200px; /* Set a fixed height */
-    object-fit: cover; /* Ensures images fill the space without distortion */
-    border-radius: 10px; /* Optional: adds rounded corners */
-    cursor: pointer; /* Makes them clickable */
-    transition: transform 0.2s ease-in-out;
-}
-
-.image-grid img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
