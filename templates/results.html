@@ -4,64 +4,58 @@
     Flight Results
 {% endblock %}
 
+{% block body_class %}
+    light-pink-page
+{% endblock %}
+
 {% block main %}
-    {% if flights %}
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th class="text-start">Origin</th>
-                    <th class="text-end">Destination</th>
-                    <th class="text-end">Departure Date</th>
-                    <th class="text-end">Adults</th>
-                    <th class="text-end">Airline</th>
-                    <th class="text-end">Price (USD)</th>
-                    <th class="text-end">Arrival Time</th>
-                    <th class="text-end">Save Flight</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for flight in flights %}
-                    {% if flight.itineraries and flight.itineraries[0].segments %}
-                        <tr>
-                            <td class="text-start">
-                                {{ flight.itineraries[0].segments[0].departure.airportName }}
-                            </td>
-                            <td class="text-end">
-                                {{ flight.itineraries[0].segments[-1].arrival.airportName }}
-                            </td>
-                            <td class="text-end">
-                                {{ flight.itineraries[0].segments[0].departure.at | format_datetime }}
-                            </td>
-                            <td class="text-end">
-                                {{ flight.travelerPricings|length }}
-                            </td>
-                            <td class="text-end">
-                                {{ flight.airlineName }}
-                            </td>
-                            <td class="text-end">
-                                {{ flight.price.total | usd }}
-                            </td>
-                            <td class="text-end">
-                                {{ flight.itineraries[0].segments[-1].arrival.at | format_datetime }}
-                            </td>
-                            <td>
-                                <form action="/save_flight" method="POST">
-                                    <input type="hidden" name="origin" value="{{ flight.itineraries[0].segments[0].departure.iataCode }}">
-                                    <input type="hidden" name="destination" value="{{ flight.itineraries[0].segments[-1].arrival.iataCode }}">
-                                    <input type="hidden" name="departure_date" value="{{ flight.itineraries[0].segments[0].departure.at }}">
-                                    <input type="hidden" name="price" value="{{ flight.price.total }}">
-                                    <input type="hidden" name="airline" value="{{ flight.airlineName }}">
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </form>
-                            </td>
-                        </tr>
-                    {% else %}
-                        <tr><td colspan="8">Invalid flight data.</td></tr>
-                    {% endif %}
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p>No flights found. Try a different search.</p>
-    {% endif %}
+<h1 class="results-header">💘 Your Flights to Love 💘</h1>
+
+{% if flights %}
+<div class="flight-table-wrapper">
+    <table class="table flirty-table">
+        <thead>
+            <tr>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Departure</th>
+                <th>Adults</th>
+                <th>Airline</th>
+                <th>Price</th>
+                <th>Arrival</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flight in flights %}
+                {% if flight.itineraries and flight.itineraries[0].segments %}
+                    <tr>
+                        <td>{{ flight.itineraries[0].segments[0].departure.airportName }}</td>
+                        <td>{{ flight.itineraries[0].segments[-1].arrival.airportName }}</td>
+                        <td>{{ flight.itineraries[0].segments[0].departure.at | format_datetime }}</td>
+                        <td>{{ flight.travelerPricings|length }}</td>
+                        <td>{{ flight.airlineName }}</td>
+                        <td>${{ flight.price.total }}</td>
+                        <td>{{ flight.itineraries[0].segments[-1].arrival.at | format_datetime }}</td>
+                        <td>
+                            <form action="/save_flight" method="POST">
+                                <input type="hidden" name="origin" value="{{ flight.itineraries[0].segments[0].departure.iataCode }}">
+                                <input type="hidden" name="destination" value="{{ flight.itineraries[0].segments[-1].arrival.iataCode }}">
+                                <input type="hidden" name="departure_date" value="{{ flight.itineraries[0].segments[0].departure.at }}">
+                                <input type="hidden" name="price" value="{{ flight.price.total }}">
+                                <input type="hidden" name="airline" value="{{ flight.airlineName }}">
+                                <button type="submit" class="btn save-btn">💾 Save</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="8">Invalid flight data.</td></tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+    <p class="no-results-msg">No flights found. Try a different search, cutie 💔</p>
+{% endif %}
 {% endblock %}
