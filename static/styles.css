@@ -571,3 +571,56 @@ footer {
   font-size: 0.9rem;
   color: #444;
 } 
+/* Login Page Wrapper */
+.login-wrapper {
+    max-width: 400px;
+    margin: 80px auto;
+    background: rgba(255, 240, 245, 0.9);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 24px rgba(255, 105, 180, 0.2);
+    text-align: center;
+}
+
+/* Login Title */
+.login-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff69b4;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 1px #fff;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Form Inputs */
+.login-form input.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #ffaad4;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
+}
+
+/* Register Redirect */
+.register-redirect .small-text {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Register Button */
+.btn-outline-pink {
+    border: 2px solid #ff69b4;
+    color: #ff69b4;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.btn-outline-pink:hover {
+    background-color: #ff69b4;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
