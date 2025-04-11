@@ -415,15 +415,16 @@ body.light-pink-page {
 }
 
 /* Position hearts randomly */
-.heart:nth-child(1)  { left: 5%;  animation-delay: 0s; }
-.heart:nth-child(2)  { left: 15%; animation-delay: 1s; }
-.heart:nth-child(3)  { left: 25%; animation-delay: 2s; }
-.heart:nth-child(4)  { left: 35%; animation-delay: 3s; }
-.heart:nth-child(5)  { left: 45%; animation-delay: 4s; }
-.heart:nth-child(6)  { left: 55%; animation-delay: 2.5s; }
-.heart:nth-child(7)  { left: 65%; animation-delay: 1.5s; }
-.heart:nth-child(8)  { left: 75%; animation-delay: 3.2s; }
-.heart:nth-child(9)  { left: 85%; animation-delay: 0.8s; }
-.heart:nth-child(10) { left: 95%; animation-delay: 2.8s; }
+.heart:nth-child(1)  { left: 5%;  top: 90%; animation-delay: 0s; }
+.heart:nth-child(2)  { left: 15%; top: 95%; animation-delay: 1s; }
+.heart:nth-child(3)  { left: 25%; top: 85%; animation-delay: 2s; }
+.heart:nth-child(4)  { left: 35%; top: 100%; animation-delay: 3s; }
+.heart:nth-child(5)  { left: 45%; top: 92%; animation-delay: 4s; }
+.heart:nth-child(6)  { left: 55%; top: 88%; animation-delay: 2.5s; }
+.heart:nth-child(7)  { left: 65%; top: 97%; animation-delay: 1.5s; }
+.heart:nth-child(8)  { left: 75%; top: 93%; animation-delay: 3.2s; }
+.heart:nth-child(9)  { left: 85%; top: 98%; animation-delay: 0.8s; }
+.heart:nth-child(10) { left: 95%; top: 91%; animation-delay: 2.8s; }
+
 /* Add more for extra floaters */
 
