@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>btn_new_message</title>
+    <defs>
+        <linearGradient x1="72.9268637%" y1="82.2783321%" x2="0%" y2="-30.8640813%" id="linearGradient-1">
+            <stop stop-color="#FC375C" offset="0%"></stop>
+            <stop stop-color="#FC37A9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MKB_04" transform="translate(-256.000000, -928.000000)">
+            <g id="qa/question-copy-3" transform="translate(240.000000, 904.000000)">
+                <g id="Group-4" transform="translate(16.000000, 24.000000)">
+                    <circle id="Oval-Copy-3" fill="url(#linearGradient-1)" cx="12" cy="12" r="12"></circle>
+                    <g id="Group-3" transform="translate(8.200000, 8.200000)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <line x1="3.8" y1="0.2" x2="3.8" y2="7.8" id="Line-11"></line>
+                        <line x1="7.6" y1="4" x2="0" y2="4" id="Line-11"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

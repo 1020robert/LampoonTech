@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="19px" viewBox="0 0 25 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>btn/next_line copy 2</title>
+    <defs>
+        <filter id="filter-1">
+             <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 0.062745 0 0 0 0 0.423529 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="#EC4276" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="MKB_01" transform="translate(-819.000000, -2388.000000)">
+            <g id="btn/next_line-copy-2" transform="translate(820.178295, 2389.988372)" filter="url(#filter-1)">
+                <g transform="translate(11.155039, 8.000000) rotate(-180.000000) translate(-11.155039, -8.000000) translate(0.000000, 0.000000)" id="Group-4" stroke="#FF1B57" stroke-width="2">
+                    <g id="Group-3" transform="translate(11.155039, 8.000000) scale(-1, 1) translate(-11.155039, -8.000000) ">
+                        <polyline id="Path" points="8.77748247 16 0.110815807 8 8.77748247 0"></polyline>
+                        <line x1="-2.27800122e-16" y1="8" x2="22.3100775" y2="8" id="Line-2"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
