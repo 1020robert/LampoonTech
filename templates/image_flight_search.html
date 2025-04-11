@@ -1,148 +1,94 @@
 {% extends 'layout.html' %}
 
 {% block main %}
-    <h1>Hottest MILF and DILF Catalogue 2025</h1>
-    <h2>Choose you lovely date by clicking their face</h2>
-     <!-- Loading screen -->
-     <div id="loading-screen" class="loading-overlay">
-        <div class="spinner"></div>
-        <p>Finding Your Lover</p>
+<h1>Hottest MILF and DILF Catalogue 2025</h1>
+<h2>Choose your lovely date by clicking their face</h2>
+
+<!-- Loading screen -->
+<div id="loading-screen" class="loading-overlay">
+  <div class="spinner"></div>
+  <p>Finding Your Lover</p>
+</div>
+
+<div class="container my-4">
+  <div class="row justify-content-center g-4 image-grid">
+
+    {% set people = [
+      {"img": "JonahLevy.jpeg", "alt": "Levy", "val": "OAK", "desc": "Levy: Uncut, 4 1/2 inches, skewed right"},
+      {"img": "KirstenDinallHoyte.jpeg", "alt": "Hoyte", "val": "MHT", "desc": "Hoyte: B"},
+      {"img": "rd.png", "alt": "River", "val": "DTW", "desc": "River: 10 inches, cut, very wide"},
+      {"img": "Cerratodad.png", "alt": "Cerrato", "val": "BWI", "desc": "Cerrato: 5 inches, uncut, curved"},
+      {"img": "CraigSuchin.webp", "alt": "Suchin", "val": "LAX", "desc": "Suchin: DDD"},
+      {"img": "Maddiesmom.png", "alt": "Dowd", "val": "SFO", "desc": "Dowd: DD"},
+      {"img": "Frazersdad.png", "alt": "Frazer", "val": "ORD", "desc": "Frazer: 6 inches, Uncut, straight"},
+      {"img": "jamesfergus.png", "alt": "Fergus", "val": "JFK", "desc": "Fergus: 3 inches, Cut, leaning left"},
+      {"img": "stevenmandis.jpg", "alt": "Mandis", "val": "JFK", "desc": "Mandis: 3 inches, Cut, skewed to right"},
+      {"img": "Cerratomom.png", "alt": "Cerrato", "val": "BWI", "desc": "Cerrato: C, positive"},
+      {"img": "riversmom.png", "alt": "River", "val": "DTW", "desc": "River: DD, smash"},
+      {"img": "hillaryzaid.png", "alt": "Zaid", "val": "OAK", "desc": "Zaid: A"},
+      {"img": "ericlund.jpg", "alt": "Lund", "val": "RDU", "desc": "Lund: 12 inches, Cut, Red White and Blue"},
+      {"img": "navarro.png", "alt": "Navarro", "val": "OAK", "desc": "Navarro: 2 inches, cut, yeah"}
+    ] %}
+
+    {% for p in people %}
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+      <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
+        <button type="submit" name="destination" value="{{ p.val }}">
+          <img src="{{ url_for('static', filename=p.img) }}" alt="{{ p.alt }}">
+          <p>{{ p.desc }}</p>
+        </button>
+      </form>
     </div>
-    <div class="image-grid">
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="OAK">
-                <img src="{{ url_for('static', filename='JonahLevy.jpeg') }}" alt="Levy">
-                <p>Levy: Uncut, 4 1/2 inches, skewed right</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="MHT">
-                <img src="{{ url_for('static', filename='KirstenDinallHoyte.jpeg') }}" alt="Hoyte">
-                <p>Hoyte: B</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="DTW">
-                <img src="{{ url_for('static', filename='rd.png') }}" alt="River">
-                <p>River: 10 inches, cut, very wide</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="BWI">
-                <img src="{{ url_for('static', filename='Cerratodad.png') }}" alt="Cerrato">
-                <p>Cerrato: 5 inches, uncut, curved</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="LAX">
-                <img src="{{ url_for('static', filename='CraigSuchin.webp') }}" alt="Suchin">
-                <p>Suchin: DDD</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="SFO">
-                <img src="{{ url_for('static', filename='Maddiesmom.png') }}" alt="Dowd">
-                <p>Dowd: DD</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="ORD">
-                <img src="{{ url_for('static', filename='Frazersdad.png') }}" alt="Frazer">
-                <p>Frazer: 6 inches, Uncut, straight </p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="JFK">
-                <img src="{{ url_for('static', filename='jamesfergus.png') }}" alt="Fergus">
-                <p>Fergus: 3 inches, Cut, leaning left</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="JFK">
-                <img src="{{ url_for('static', filename='stevenmandis.jpg') }}" alt="Mandis">
-                <p>Mandis: 3 inches, Cut, skewed to right</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="BWI">
-                <img src="{{ url_for('static', filename='Cerratomom.png') }}" alt="Cerrato">
-                <p>Cerrato: C, positive</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="DTW">
-                <img src="{{ url_for('static', filename='riversmom.png') }}" alt="River">
-                <p>River: DD, smash</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="OAK">
-                <img src="{{ url_for('static', filename='hillaryzaid.png') }}" alt="Zaid">
-                <p>Zaid: A</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="RDU">
-                <img src="{{ url_for('static', filename='ericlund.jpg') }}" alt="Lund">
-                <p>Lund: 12 inches, Cut, Red White and Blue</p>
-            </button>
-        </form>
-        <form action="/fetch_flight_from_bos" method="POST" onsubmit="showLoadingScreen(event)">
-            <button type="submit" name="destination" value="OAK">
-                <img src="{{ url_for('static', filename='navarro.png') }}" alt="Navarro">
-                <p>Navarro: 2 inches, cut, yeah</p>
-            </button>
-        </form>
-    </div>
-    <script>
-        function showLoadingScreen(event) {
-            // Prevent multiple form submissions
-            if (document.getElementById("loading-screen").style.display === "flex") {
-                event.preventDefault();
-                return false;
-            }
+    {% endfor %}
 
-            // Show the loading screen
-            document.getElementById("loading-screen").style.display = "flex";
-        }
+  </div>
+</div>
 
-        // Hide loading screen when the page loads
-        window.onload = function() {
-            document.getElementById("loading-screen").style.display = "none";
-        };
-    </script>
+<script>
+  function showLoadingScreen(event) {
+    if (document.getElementById("loading-screen").style.display === "flex") {
+      event.preventDefault();
+      return false;
+    }
+    document.getElementById("loading-screen").style.display = "flex";
+  }
 
-    <style>
-        .loading-overlay {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: white;
-            font-size: 20px;
-            z-index: 9999;
-        }
+  window.onload = function() {
+    document.getElementById("loading-screen").style.display = "none";
+  };
+</script>
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 15px;
-        }
+<style>
+  .loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    z-index: 9999;
+  }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
 
 {% endblock %}
