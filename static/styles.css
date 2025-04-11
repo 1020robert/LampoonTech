@@ -224,4 +224,7 @@ footer {
     background: rgba(255, 105, 180, 0.95);
   }
 }
+body.light-pink-page {
+    background-color: #fff0f5; /* soft blush pink */
+}
 
