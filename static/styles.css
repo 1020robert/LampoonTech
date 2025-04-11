@@ -10,6 +10,7 @@ main {
     flex: 1;
 }
 
+/* Navbar Brand Styling */
 nav .navbar-brand {
     font-size: xx-large;
 }
@@ -18,6 +19,7 @@ nav .navbar-brand .red { color: #ea433b; }
 nav .navbar-brand .yellow { color: #f5b82e; }
 nav .navbar-brand .green { color: #2e944b; }
 
+/* Backgrounds */
 body.login-page {
     background-image: url(/static/Harvard.jpg);
     background-size: cover;
@@ -43,93 +45,529 @@ body.default-page {
     background-color: #f8f9fa;
 }
 
-/* Navbar Styling */
-.animated-navbar {
-    background: linear-gradient(to right, #ff85b3, #ffc0cb);
-    border-bottom: 2px solid #ffaad4;
-    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.25);
-    font-family: 'Fredoka', sans-serif;
+/* Landing Content Styling */
+.landing-wrapper {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(255, 105, 180, 0.15);
+    text-align: center;
 }
 
-.animated-navbar .navbar-brand {
+.top-flirt h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ff69b4;
+    margin-bottom: 15px;
+}
+
+.top-flirt p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.top-flirt .highlighted {
+    color: #ff69b4;
     font-weight: 700;
-    font-size: 1.6rem;
-    color: white !important;
-    text-shadow: 1px 1px 2px #ffaad4;
-    animation: colorPulse 4s infinite ease-in-out;
 }
 
-.animated-navbar .nav-link {
-    color: #fff !important;
+.top-flirt .hot {
+    background: linear-gradient(to right, #ff69b4, #ffc0cb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+.features-list {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.features-list h2 {
+    font-size: 2rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.features-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    color: #444;
+}
+
+.features-list .emoji {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.crossed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 10px;
+    font-size: 16px;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-links, .footer-social, .footer-copyright {
+    margin: 10px 0;
+}
+.footer-links a, .footer-social a {
+    color: #ffffff;
+    text-decoration: underline;
+    margin: 0 10px;
+}
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+.footer-social img {
+    width: 24px;
+    margin: 0 5px;
+}
+
+/* Text Overlay Section */
+.text {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.text h1 { font-size: 40px; text-decoration: underline; }
+.text p span { font-size: 28px; display: inline; padding: 2px; }
+
+/* Grid */
+.image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.image-grid form {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Card Styling */
+.image-grid button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.4s ease both;
+
+    height: 100%;
+    width: 220px;
+    background: linear-gradient(145deg, #fff0f5, #ffe4ec);
+    border: 2px solid #ffaad4;
+    border-radius: 18px;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(255, 170, 212, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-grid button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 16px 32px rgba(255, 170, 212, 0.5);
+}
+
+.image-grid button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 18px;
+}
+.image-grid button:hover::after {
+    opacity: 1;
+}
+
+/* Profile Picture Styling */
+.image-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
+    margin-top: 10px;
+}
+
+/* Caption Reveal */
+.image-grid p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background: rgba(255, 105, 180, 0.9);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+.image-grid button:hover p {
+    transform: translateY(0%);
+}
+
+/* Floating Badge */
+.profile-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ff69b4;
+    color: white;
+    padding: 6px 9px;
+    border-radius: 50%;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+/* Card Fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* On mobile/touch: always show description instead of hover */
+@media (hover: none) and (pointer: coarse) {
+  .image-grid p {
+    transform: translateY(0%) !important;
+    background: rgba(255, 105, 180, 0.95);
+  }
+}
+
+/* Page background and heading styling */
+body.light-pink-page {
+    background-color: #ffe6f0; /* soft blush pink */
+}
+
+.page-header {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ff69b4;
+    text-shadow: 1px 1px 0 #fff;
+    line-height: 1.3;
+}
+
+.page-header h2 {
+    font-size: 1.4rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    color: #444;
+    margin-top: 15px;
 }
 
-.animated-navbar .nav-link:hover {
-    color: #ffe6f0 !important;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
-    animation: sparkle 0.8s ease-in-out;
+.page-header .milf {
+    color: #ff69b4;
+    font-weight: 800;
+    text-shadow: 0 1px 0 #fff;
 }
 
-@keyframes sparkle {
-    0%   { text-shadow: 0 0 4px #fff; }
-    50%  { text-shadow: 0 0 12px #fff; }
-    100% { text-shadow: 0 0 4px #fff; }
+.page-header .dilf {
+    color: #69b4ff;
+    font-weight: 800;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.page-header .year {
+    font-size: 3rem;
+    color: #ffaad4;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.2);
+}
+
+.page-header .highlight {
+    color: #222;
+    font-weight: 600;
+}
+
+.page-header .emphasis {
+    color: #ff69b4;
+    font-weight: 600;
+    position: relative;
+}
+
+.page-header .emphasis::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #ffd6e8;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    border-radius: 2px;
+}
+.cta-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pulse-button {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(to right, #ff69b4, #ff85c1);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+    animation: pulse 1.5s infinite;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.pulse-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.8rem;
+    color: #ff69b4;
+    opacity: 0;
+    animation: floatFade 10s ease-in-out infinite;
+}
+
+/* Keyframes: gentle fade + float upward */
+@keyframes floatFade {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Position hearts randomly */
+.heart:nth-child(1)  { left: 5%;  top: 90%; animation-delay: 0s; }
+.heart:nth-child(2)  { left: 15%; top: 95%; animation-delay: 1s; }
+.heart:nth-child(3)  { left: 25%; top: 85%; animation-delay: 2s; }
+.heart:nth-child(4)  { left: 35%; top: 100%; animation-delay: 3s; }
+.heart:nth-child(5)  { left: 45%; top: 92%; animation-delay: 4s; }
+.heart:nth-child(6)  { left: 55%; top: 88%; animation-delay: 2.5s; }
+.heart:nth-child(7)  { left: 65%; top: 97%; animation-delay: 1.5s; }
+.heart:nth-child(8)  { left: 75%; top: 93%; animation-delay: 3.2s; }
+.heart:nth-child(9)  { left: 85%; top: 98%; animation-delay: 0.8s; }
+.heart:nth-child(10) { left: 95%; top: 91%; animation-delay: 2.8s; }
+
+/* Add more for extra floaters */
+
+/* Sparkling Button */
+.pulse-button {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(to right, #ff69b4, #ff85c1);
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  animation: pulse 1.5s infinite;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.pulse-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+}
+
+.pulse-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0.3), transparent);
+  transform: skewX(-20deg);
+  animation: sparkle-slide 1.5s infinite;
+}
+
+@keyframes sparkle-slide {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* Logo Pulse */
+.pulse-logo {
+  animation: colorPulse 4s infinite ease-in-out;
 }
 
 @keyframes colorPulse {
-    0%   { filter: hue-rotate(0deg); }
-    50%  { filter: hue-rotate(45deg); }
-    100% { filter: hue-rotate(0deg); }
+  0%   { filter: hue-rotate(0deg);    }
+  50%  { filter: hue-rotate(45deg);  }
+  100% { filter: hue-rotate(0deg);   }
 }
 
-/* Footer Styling */
+/* Wave Divider */
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-top: -40px;
+}
+
+/* Navbar Hover Sparkle */
+.navbar-nav .nav-link:hover {
+  color: #ffe6f0 !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  animation: sparkle 0.8s ease-in-out;
+}
+
+@keyframes sparkle {
+  0%   { text-shadow: 0 0 4px #fff; }
+  50%  { text-shadow: 0 0 12px #fff; }
+  100% { text-shadow: 0 0 4px #fff; }
+}
+
+/* Flirty Navbar Theme */
+.animated-navbar {
+  background: linear-gradient(to right, #ff85b3, #ffc0cb);
+  border-bottom: 2px solid #ffaad4;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.25);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.animated-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: white !important;
+  text-shadow: 1px 1px 2px #ffaad4;
+}
+
+.animated-navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Footer Theme Update */
 footer {
-    position: relative;
-    background: linear-gradient(to right, #ffd1dc, #ffe6f0);
-    box-shadow: 0 -4px 20px rgba(255, 182, 193, 0.3);
-    color: #7a2f51;
-    text-align: center;
-    font-family: 'Fredoka', sans-serif;
-}
-
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+  position: relative;
+  background: linear-gradient(to right, #ffd1dc, #ffe6f0);
+  box-shadow: 0 -4px 20px rgba(255, 182, 193, 0.3);
+  color: #7a2f51;
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
 }
 
 .footer-links a,
 .footer-social a {
-    color: #ff69b4;
-    font-weight: 600;
-    text-decoration: none;
-    margin: 5px;
+  color: #ff69b4;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 5px;
 }
 
 .footer-links a:hover,
 .footer-social a:hover {
-    text-decoration: underline;
-    color: #d63384;
+  text-decoration: underline;
+  color: #d63384;
 }
 
 .footer-social img {
-    width: 28px;
-    transition: transform 0.3s ease;
+  width: 28px;
+  transition: transform 0.3s ease;
 }
 
 .footer-social img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 .footer-copyright p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #444;
-}
-
-/* Remove floating hearts in footer space */
-.floating-hearts {
-    z-index: -1;
-}
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+} 
