@@ -1,83 +1,112 @@
 {% extends 'layout.html' %}
 
-{% block main %}
-    <h1>Potential Step Children</h1>
-    <div class="gallery-container">
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='sterling-hoyte.jpg') }}" alt="Sterling Hoyte">
-            <p>Sterling Hoyte: Who doesn't want a piece of this </p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='charlotte-levy.jpg') }}" alt="Charlotte Levy">
-            <p>Charlotte Levy: "Charlie is a dancer first, influencer second, improviser third, human fourth, and matzah-lover fifth"</p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='Caden-Heiser-Cerrato.jpg') }}" alt="Caden Heiser-Cerrato">
-            <p>Caden Heiser-Cerrato: Go watch his podcast<a href="https://www.facebook.com/KairaliBaltimore/videos/podkast-wjohanguest-speaker-caden-heiser-cerrato/611391507272173/" target="_blank">
-                here
-            </a>.
-    </p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='chris-rivers.jpeg') }}" alt="Chris Rivers">
-            <p>Chris Rivers: If you become this guys step parent tell him to stop hitting on freshmen</p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='maddie-dowd.jpeg') }}" alt="Maddie Dowd">
-            <p>Maddie Dowd: Shes lowkey old enough to be classified as a MILF</p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='Hannah-frazer.jpg') }}" alt="Hannah Frazer">
-            <p>Hannah Frazer: Thought she would be on biz board </p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='june-fergus.jpg') }}" alt="June Fergus">
-            <p>June Fergus:Her dad has a kick ass motorcycle </p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='gabi-navarro.png') }}" alt="Gabi Navarro">
-            <p>Gabi Navarro: I think it should be spelled Gabby</p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='isabella-mandis.jpg') }}" alt="Isabella Mandis">
-            <p>Isabella Mandis: Do you know what it's like to eat the rich?</p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='gilli-zaid.jpg') }}" alt="Gill Zaid">
-            <p>Gilli Zaid: Do you know what's hotter than two moms? Three.</p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='isaac-lund.jpg') }}" alt="Isaac-lund">
-            <p>Issac Lund: "Isaac inspires students with his work ethic and how much he cares about his education"- Stephanie Burwell, Lund’s biology teacher </p>
-        </div>
-        <div class="gallery-item">
-            <img src="{{ url_for('static', filename='sam-suchin.jpg') }}" alt="Sam Suchin">
-            <p>Suchin: I think he likes coding, not too sure might ask him agian.</p>
-        </div>
-    </div>
+{% block title %}
+    Step Children
+{% endblock %}
 
-    <style>
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            justify-items: center;
-            padding: 20px;
-        }
-        .gallery-item {
-            text-align: center;
-            width: 200px;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .gallery-item p {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #333;
-        }
-    </style>
+{% block body_class %}
+    light-pink-page
+{% endblock %}
+
+{% block main %}
+<h1 class="page-header">Your Future Stepchildren</h1>
+<div class="step-gallery">
+  {% set stepkids = [
+    ["sterling-hoyte.jpg", "Sterling Hoyte", "Who doesn't want a piece of this"],
+    ["charlotte-levy.jpg", "Charlotte Levy", "\"Charlie is a dancer first, influencer second, improviser third, human fourth, and matzah-lover fifth\""],
+    ["Caden-Heiser-Cerrato.jpg", "Caden Heiser-Cerrato", "Go watch his podcast <a href='https://www.facebook.com/KairaliBaltimore/videos/podkast-wjohanguest-speaker-caden-heiser-cerrato/611391507272173/' target='_blank'>here</a>."],
+    ["chris-rivers.jpeg", "Chris Rivers", "If you become this guy's stepparent, tell him to stop hitting on freshmen"],
+    ["maddie-dowd.jpeg", "Maddie Dowd", "She’s lowkey old enough to be classified as a MILF"],
+    ["Hannah-frazer.jpg", "Hannah Frazer", "Thought she would be on biz board"],
+    ["june-fergus.jpg", "June Fergus", "Her dad has a kickass motorcycle"],
+    ["gabi-navarro.png", "Gabi Navarro", "I think it should be spelled Gabby"],
+    ["isabella-mandis.jpg", "Isabella Mandis", "Do you know what it's like to eat the rich?"],
+    ["gilli-zaid.jpg", "Gilli Zaid", "Do you know what's hotter than two moms? Three."],
+    ["isaac-lund.jpg", "Isaac Lund", "\"Isaac inspires students with his work ethic and how much he cares about his education\" – Stephanie Burwell"],
+    ["sam-suchin.jpg", "Sam Suchin", "I think he likes coding. Not too sure, might ask again."]
+  ] %}
+
+  {% for pic, name, desc in stepkids %}
+    <div class="step-card">
+      <img src="{{ url_for('static', filename=pic) }}" alt="{{ name }}">
+      <div class="step-info">
+        <h5>{{ name }}</h5>
+        <p>{{ desc|safe }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .page-header {
+    color: #ff69b4;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 50px auto 30px;
+    text-shadow: 1px 1px 2px #fff;
+  }
+
+  .step-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step-card {
+    background: #fff0f5;
+    border-radius: 18px;
+    box-shadow: 0 6px 16px rgba(255, 105, 180, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(255, 105, 180, 0.3);
+  }
+
+  .step-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #ffaad4;
+  }
+
+  .step-info {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .step-info h5 {
+    margin: 10px 0 5px;
+    color: #d63384;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .step-info p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+  }
+
+  .step-info a {
+    color: #ff69b4;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .step-info a:hover {
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}
+{% block footer_quote %}
+<div class="footer-quote">
+    <p>“Raising them is optional. Loving them is guaranteed.” 💘</p>
+</div>
 {% endblock %}
