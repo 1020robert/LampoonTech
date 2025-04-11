@@ -790,4 +790,75 @@ footer {
   color: #d63384;
   margin-top: 40px;
 }
+.page-header {
+  color: #ff69b4;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 50px auto 30px;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+.suggestion-form {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.1);
+}
+
+.suggestion-form label {
+  font-weight: 600;
+  color: #d63384;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.suggestion-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ffaad4;
+  resize: vertical;
+  font-family: 'Fredoka', sans-serif;
+  box-shadow: 0 2px 5px rgba(255, 182, 193, 0.2);
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.divider-line {
+  border-top: 2px dashed #ffb6c1;
+  margin: 40px auto;
+  width: 80%;
+}
+
+.suggestion-table-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flirty-table th {
+  background: #ffe6f0;
+  color: #d63384;
+  font-weight: 700;
+  text-align: center;
+}
+
+.flirty-table td {
+  background: #fff0f5;
+  color: #333;
+  vertical-align: middle;
+  text-align: center;
+  padding: 12px;
+  border-color: #ffb6c1;
+}
+
+.no-results-msg {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #d63384;
+  margin-top: 40px;
+}
 
