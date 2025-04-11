@@ -428,3 +428,114 @@ body.light-pink-page {
 
 /* Add more for extra floaters */
 
+/* Sparkling Button */
+.pulse-button {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(to right, #ff69b4, #ff85c1);
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  animation: pulse 1.5s infinite;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.pulse-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+}
+
+.pulse-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0.3), transparent);
+  transform: skewX(-20deg);
+  animation: sparkle-slide 1.5s infinite;
+}
+
+@keyframes sparkle-slide {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* Logo Pulse */
+.pulse-logo {
+  animation: colorPulse 4s infinite ease-in-out;
+}
+
+@keyframes colorPulse {
+  0%   { filter: hue-rotate(0deg);    }
+  50%  { filter: hue-rotate(45deg);  }
+  100% { filter: hue-rotate(0deg);   }
+}
+
+/* Wave Divider */
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-top: -40px;
+}
+
+/* Floating Hearts */
+.footer-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-hearts .heart {
+  position: absolute;
+  font-size: 1.4rem;
+  color: #ff69b4;
+  opacity: 0;
+  animation: footerFloat 8s ease-in-out infinite;
+}
+
+@keyframes footerFloat {
+  0%   { transform: translateY(100%) scale(0.8); opacity: 0; }
+  40%  { opacity: 1; }
+  100% { transform: translateY(-150%) scale(1.2); opacity: 0; }
+}
+
+.footer-hearts .heart:nth-child(1)  { left: 5%; animation-delay: 0s; }
+.footer-hearts .heart:nth-child(2)  { left: 20%; animation-delay: 2s; }
+.footer-hearts .heart:nth-child(3)  { left: 35%; animation-delay: 4s; }
+.footer-hearts .heart:nth-child(4)  { left: 50%; animation-delay: 1s; }
+.footer-hearts .heart:nth-child(5)  { left: 65%; animation-delay: 3s; }
+.footer-hearts .heart:nth-child(6)  { left: 80%; animation-delay: 5s; }
+
+/* Navbar Hover Sparkle */
+.navbar-nav .nav-link:hover {
+  color: #ffe6f0 !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  animation: sparkle 0.8s ease-in-out;
+}
+
+@keyframes sparkle {
+  0%   { text-shadow: 0 0 4px #fff; }
+  50%  { text-shadow: 0 0 12px #fff; }
+  100% { text-shadow: 0 0 4px #fff; }
+}
+
+
