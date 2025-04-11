@@ -164,3 +164,38 @@ footer {
 
 .image-grid img:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
+
+.image-grid form {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.image-grid button {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.image-grid button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.image-grid p {
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
