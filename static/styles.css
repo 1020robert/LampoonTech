@@ -45,53 +45,76 @@ body.default-page {
     background-color: #f8f9fa;
 }
 
-/* Hero Sections */
-.top, .features {
-    background-color: rgba(255, 182, 193, 0.85);
-    color: #fff;
-    padding: 30px;
-    border-radius: 18px;
-    margin: 30px auto;
+/* Landing Content Styling */
+.landing-wrapper {
     max-width: 800px;
-    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.2);
+    margin: 80px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(255, 105, 180, 0.15);
     text-align: center;
 }
-.top h1 {
+
+.top-flirt h1 {
     font-size: 2.5rem;
-    color: #ff69b4;
     font-weight: 800;
+    color: #ff69b4;
     margin-bottom: 15px;
 }
-.top p {
+
+.top-flirt p {
     font-size: 1.2rem;
-    color: #fff;
+    color: #333;
+    line-height: 1.6;
 }
 
-.features {
-    background-color: #ffe6f0;
-    color: #333;
+.top-flirt .highlighted {
+    color: #ff69b4;
+    font-weight: 700;
+}
+
+.top-flirt .hot {
+    background: linear-gradient(to right, #ff69b4, #ffc0cb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+.features-list {
+    margin-top: 40px;
     text-align: left;
 }
-.features ul {
+
+.features-list h2 {
+    font-size: 2rem;
+    color: #ff69b4;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.features-list ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
-.features li {
-    margin-bottom: 10px;
+
+.features-list li {
     font-size: 1.1rem;
+    margin-bottom: 12px;
+    padding-left: 30px;
     position: relative;
-    padding-left: 25px;
+    color: #444;
 }
-.features li::before {
-    content: '💘';
+
+.features-list .emoji {
     position: absolute;
     left: 0;
     top: 0;
 }
-.features h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #ff69b4;
+
+.crossed {
+    text-decoration: line-through;
+    color: #999;
 }
 
 /* Footer */
