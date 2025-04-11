@@ -1,38 +1,48 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Log In
+    Message Board
+{% endblock %}
+
+{% block body_class %}
+    light-pink-page
 {% endblock %}
 
 {% block main %}
-<h2>Message Board</h2>
-<form action="/suggestions" method="POST">
-    <label for="suggestion">Submit Your Message:</label>
-    <textarea id="suggestion" name="suggestion" rows="4" required></textarea>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<h1 class="page-header">💌 Message Board 💌</h1>
 
-<hr>
+<div class="suggestion-form">
+    <form action="/suggestions" method="POST">
+        <label for="suggestion">Drop a flirty message ✍️</label>
+        <textarea id="suggestion" name="suggestion" rows="4" placeholder="What’s on your heart?" required></textarea>
+        <button type="submit" class="pulse-button">Submit 💖</button>
+    </form>
+</div>
+
 {% if suggestions %}
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th class="text-start">User</th>
-            <th class="text-start">Message</th>
-            <th class="text-start">Submitted At</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for suggestion in suggestions %}
+<hr class="divider-line">
+
+<div class="suggestion-table-container">
+    <table class="table flirty-table">
+        <thead>
             <tr>
-                <td class="text-start">{{ suggestion.username }}</td>
-                <td class="text-start">{{ suggestion.suggestion }}</td>
-                <td class="text-start">{{ suggestion.created_at }}</td>
+                <th>User</th>
+                <th>Message</th>
+                <th>Submitted At</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {% for suggestion in suggestions %}
+            <tr>
+                <td>{{ suggestion.username }}</td>
+                <td>{{ suggestion.suggestion }}</td>
+                <td>{{ suggestion.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% else %}
-    <p>No Messages have been submitted yet.</p>
+<p class="no-results-msg">No sweet nothings yet. Be the first to whisper something 💕</p>
 {% endif %}
 {% endblock %}
