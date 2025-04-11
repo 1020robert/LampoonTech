@@ -1,70 +1,90 @@
-/* Base font and layout */
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f8f9fa;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
+/* Main content area expands to push the footer down */
 main {
     flex: 1;
 }
 
-/* Navbar brand styling */
-.navbar-brand {
-    font-size: 1.5rem;
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
 }
 
-/* Page backgrounds */
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+nav .navbar-brand .green {
+    color: #2e944b;
+}
+
+/* Backgrounds for specific pages */
 body.login-page {
-    background: url(/static/Harvard.jpg) center center / cover no-repeat fixed;
+    background-image: url(/static/Harvard.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
+
 body.index-page {
-    background: url(/static/test.jpg) center 20% / cover no-repeat fixed;
+    background-image: url(/static/test.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-attachment: fixed;
 }
+
 body.about-page {
-    background: url(/static/jupiter.jpeg) center center / cover no-repeat fixed;
+    background-image: url(/static/jupiter.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body.default-page {
+    background-color: #f8f9fa;
 }
 
 /* Section styles */
 .top, .features {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 .top h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 100px;
+    padding: 10px;
 }
 
 .top p {
-    font-size: 1.5rem;
+    font-size: 35px;
 }
 
 .features {
-    font-size: 1.1rem;
+    margin: 100px auto;
+    font-size: 20px;
     text-align: left;
 }
 
 .features ul {
-    padding-left: 1.5rem;
+    padding-left: 20px;
 }
 
 .features h2 {
-    margin-bottom: 1rem;
-}
-
-/* Utility classes */
-.text-primary {
-    color: #007bff !important;
-}
-
-footer {
-    font-size: 0.875rem;
-}
+    text-align:
