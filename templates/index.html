@@ -28,6 +28,16 @@
     </ul>
   </div>
 
+  <div class="cta-button-container">
+    <a href="{{ url_for('image_flight_search') }}" class="pulse-button">💖 Find Your Love 💖</a>
+  </div>
+
 </div>
 
+<!-- Floating hearts animation -->
+<div class="floating-hearts">
+  {% for _ in range(20) %}
+    <div class="heart">💗</div>
+  {% endfor %}
+</div>
 {% endblock %}
