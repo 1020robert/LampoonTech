@@ -4,64 +4,67 @@
     Flight Results
 {% endblock %}
 
-{% block body_class %}
-    light-pink-page
-{% endblock %}
-
 {% block main %}
-<h1 class="results-header">💘 Your Flights to Love 💘</h1>
+<div class="flight-results-wrapper">
+    <h1 class="page-header">Your Dream Flights 💘</h1>
 
-{% if flights %}
-<div class="flight-table-wrapper">
-    <table class="table flirty-table">
-        <thead>
-            <tr>
-                <th>Origin</th>
-                <th>Destination</th>
-                <th>Departure</th>
-                <th>Adults</th>
-                <th>Airline</th>
-                <th>Price</th>
-                <th>Arrival</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for flight in flights %}
-                {% if flight.itineraries and flight.itineraries[0].segments %}
+    {% if flights %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-pink text-center">
+                <tr>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Departure</th>
+                    <th>Adults</th>
+                    <th>Airline</th>
+                    <th>Price</th>
+                    <th>Arrival</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in flights %}
+                    {% if flight.itineraries and flight.itineraries[0].segments %}
                     <tr>
                         <td>{{ flight.itineraries[0].segments[0].departure.airportName }}</td>
                         <td>{{ flight.itineraries[0].segments[-1].arrival.airportName }}</td>
                         <td>{{ flight.itineraries[0].segments[0].departure.at | format_datetime }}</td>
-                        <td>{{ flight.travelerPricings|length }}</td>
+                        <td class="text-center">{{ flight.travelerPricings|length }}</td>
                         <td>{{ flight.airlineName }}</td>
                         <td>${{ flight.price.total }}</td>
                         <td>{{ flight.itineraries[0].segments[-1].arrival.at | format_datetime }}</td>
-                        <td>
-                            <form action="/save_flight" method="POST">
+                        <td class="text-center">
+                            <!-- Save Button -->
+                            <form action="/save_flight" method="POST" class="d-inline">
                                 <input type="hidden" name="origin" value="{{ flight.itineraries[0].segments[0].departure.iataCode }}">
                                 <input type="hidden" name="destination" value="{{ flight.itineraries[0].segments[-1].arrival.iataCode }}">
                                 <input type="hidden" name="departure_date" value="{{ flight.itineraries[0].segments[0].departure.at }}">
                                 <input type="hidden" name="price" value="{{ flight.price.total }}">
                                 <input type="hidden" name="airline" value="{{ flight.airlineName }}">
-                                <button type="submit" class="btn save-btn">💾 Save</button>
+                                <button type="submit" class="btn btn-sm btn-primary mb-1">💾 Save</button>
                             </form>
-                            <a 
-                              href="https://www.google.com/flights?hl=en#flt={{ flight.itineraries[0].segments[0].departure.iataCode }}.{{ flight.itineraries[0].segments[-1].arrival.iataCode }}.{{ flight.itineraries[0].segments[0].departure.at[:10] }};"
-                              target="_blank"
-                              class="btn btn-outline-danger btn-sm">
-                              💺 Book on Google Flights
+
+                            <!-- Google Flights Button -->
+                            {% set origin_code = flight.itineraries[0].segments[0].departure.iataCode %}
+                            {% set destination_code = flight.itineraries[0].segments[-1].arrival.iataCode %}
+                            {% set departure_date = flight.itineraries[0].segments[0].departure.at[:10] %}
+                            <a href="https://www.google.com/flights?hl=en#flt={{ origin_code }}.{{ destination_code }}.{{ departure_date }}" 
+                               target="_blank" 
+                               class="btn btn-sm btn-outline-danger">
+                                ✈️ Google Flights
                             </a>
                         </td>
                     </tr>
-                {% else %}
-                    <tr><td colspan="8">Invalid flight data.</td></tr>
-                {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>
+                    {% else %}
+                        <tr><td colspan="8" class="text-center">Invalid flight data.</td></tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p class="lead text-muted">No flights found. Try a different search. 💔</p>
+    {% endif %}
 </div>
-{% else %}
-    <p class="no-results-msg">No flights found. Try a different search, cutie 💔</p>
-{% endif %}
 {% endblock %}
