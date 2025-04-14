@@ -46,6 +46,12 @@
                                 <input type="hidden" name="airline" value="{{ flight.airlineName }}">
                                 <button type="submit" class="btn save-btn">💾 Save</button>
                             </form>
+                            <a 
+                              href="https://www.google.com/flights?hl=en#flt={{ flight.itineraries[0].segments[0].departure.iataCode }}.{{ flight.itineraries[0].segments[-1].arrival.iataCode }}.{{ flight.itineraries[0].segments[0].departure.at[:10] }};"
+                              target="_blank"
+                              class="btn btn-outline-danger btn-sm">
+                              💺 Book on Google Flights
+                            </a>
                         </td>
                     </tr>
                 {% else %}
