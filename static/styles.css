@@ -861,4 +861,14 @@ footer {
   color: #d63384;
   margin-top: 40px;
 }
+.table-pink {
+    background: #ffe6f0;
+    color: #d63384;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.table th, .table td {
+    vertical-align: middle;
+}
+
 
