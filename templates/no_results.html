@@ -1,11 +1,69 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Log In
+    No Flights Found
+{% endblock %}
+
+{% block body_class %}
+    light-pink-page
 {% endblock %}
 
 {% block main %}
-<p>No valid flight data found. Please search again</p>
-<a href="/image_flight_search" class="btn btn-primary">Search Again</a>
-{% endblock %}
+<div class="no-results-container">
+    <h1 class="no-results-title">Oops... 😢 No Flights Found!</h1>
+    <p class="no-results-text">Looks like love is being a little shy today. Try again and you might just find your perfect match in the skies! ✈️💘</p>
+    
+    <a href="/image_flight_search" class="pulse-button mt-4">💖 Try Another Search 💖</a>
+</div>
 
+<style>
+  .no-results-container {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 50px 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: 80px auto;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(255, 105, 180, 0.2);
+  }
+
+  .no-results-title {
+      font-size: 2.4rem;
+      color: #ff69b4;
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px #fff;
+  }
+
+  .no-results-text {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 25px;
+  }
+
+  .pulse-button {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(to right, #ff69b4, #ff85c1);
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      animation: pulse 1.5s infinite;
+      transition: transform 0.2s ease;
+      display: inline-block;
+  }
+
+  .pulse-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+  }
+
+  @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+      100% { transform: scale(1); }
+  }
+</style>
+{% endblock %}
